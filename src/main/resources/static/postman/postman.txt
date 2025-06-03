@@ -1,0 +1,54 @@
+Bearer + Token
+
+// Inserciond e la orden
+curl --location 'http://localhost:8080/ms-trupper-clf-service/ordenes/v1' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--header 'Cookie: JSESSIONID=528912EF7A0C0A94A48799366186B701' \
+--data '{
+    "sucursalId": 1,
+    "fecha": "2025-06-01",
+    "total": 519.00,
+    "prodcutos": [
+        {
+            "codigo": "18156",
+            "descripcion": "Esmeriladora angular",
+            "precio": 625.00
+        },
+        {
+            "codigo": "17193",
+            "descripcion": "Pala redonda",
+            "precio": 100.50
+        }
+    ]
+}'
+
+
+// Actualizacion de la orden
+curl -X 'PUT' \
+  'http://localhost:8080/ms-trupper-clf-service/ordenes/v1/1' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "sucursalId": 1,
+    "fecha": "2025-06-01",
+    "total": 55.50,
+    "prodcutos": [
+        {
+            "codigo": "18156",
+            "descripcion": "Esmeriladora angular",
+            "precio": 625.00
+        },
+        {
+            "codigo": "17193",
+            "descripcion": "Pala redonda",
+            "precio": 100.50
+        }
+    ]
+}'
+
+
+// Consulta de la orden
+curl -X 'GET' \
+  'http://localhost:8080/ms-trupper-clf-service/ordenes/v1/1' \
+  -H 'accept: */*'

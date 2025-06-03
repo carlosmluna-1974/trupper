@@ -16,18 +16,12 @@ public interface OrdenService {
 	OrdenEntity consultaOrdenPorOrderId(Long ordenId);
 	
 	/**
-	 * Metodo que inserta la orden
-	 * @param ordenRequest
-	 * @return
+	 * Metodo que guarda la orden en la base de datos.
+	 * @param ordenId Orden ID. (Puede o no existir.
+	 * @param ordenRequest Datos de entrada
+	 * @return Registro de la orden creada o actualizada.
 	 */
-	OrdenEntity insertaOrden(OrdenRequest ordenRequest);
-	
-	/**
-	 * Metodo que inserta la orden
-	 * @param ordenRequest
-	 * @return
-	 */
-	OrdenEntity actualizaOrden(Long ordenId, OrdenRequest ordenRequest);
+	OrdenEntity guardaOrden(Long ordenId, OrdenRequest ordenRequest);
 	
 	
 }
